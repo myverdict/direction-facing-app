@@ -1,0 +1,9 @@
+
+input[type="text"]:focus, select:focus {
+    background-color: lightgray;
+}
+
+/* For span elements with * for required inputs */
+.necessary {
+    color: red;
+}
