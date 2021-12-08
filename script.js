@@ -1,3 +1,5 @@
+// JavaScript for direction-facing-app
+
 
 // an array of 51 objects
 // console.log(usaStates);     // debug: checking if list of US states is available or not
@@ -17,6 +19,14 @@ let displayParaEl = document.querySelector('#displayDetails');
 
 
 makeUSStatesOptions();      // create the US states dropdown list
+
+
+// if user presses the 'Enter' key
+document.addEventListener('keyup', function(event) {
+    if(event.key === "Enter") {
+        submitButtonEl.click();     // click the 'Submit' button
+    }
+})
 
 
 // add an event listener to the clear button to clear the form
@@ -61,10 +71,10 @@ submitButtonEl.addEventListener("click", function () {
  */
 function makeUSStatesOptions() {
     usaStates.forEach(state => {
-        option = document.createElement('option');  // create a new option element
-        option.value = state.name.toLowerCase();    // set the option value attribute
-        option.innerHTML = state.name;              // display the option in the HTML dropdown list
-        stateSelectEl.appendChild(option);          // add the option element to the select DOM
+        option = document.createElement('option');      // create a new option element
+        option.value = state["alpha-2"].toLowerCase();  // set the option value attribute to state abbreviation
+        option.innerHTML = state.name;                  // display the option in the HTML dropdown list
+        stateSelectEl.appendChild(option);              // add the option element to the select DOM
     })
 }
 

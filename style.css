@@ -1,6 +1,7 @@
+/* Styles for direction-facing-app */
 
 input[type="text"]:focus, select:focus {
-    background-color: lightgray;
+    background-color: lightgoldenrodyellow;
 }
 
 /* For span elements with * for required inputs */
